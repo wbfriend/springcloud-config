@@ -40,7 +40,7 @@ eureka:
 server:
   port: 8002
 spring:
-  profiles: dev
+  profiles: test
   application:
     name: springcloud-coinfig-dept
   datasource:
