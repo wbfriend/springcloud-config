@@ -1,0 +1,76 @@
+﻿spring:
+   profiles:
+      active:
+      - dev
+---
+server:
+   port: 8001
+spring:
+   profiles: dev
+   application:
+       name: springcloud-coinfig-dept
+   datasource:
+     driver-class-name: com.mysql.jdbc.Driver
+     url: jdbc:mysql://192.168.1.66:3366/spring_cloud?useUnicode=true&characterEncoding=utf8&useSSL=false
+     username: root
+     password: 123456
+   mybatis:
+     mapper-locations: classpath:mapper/*.xml
+   logging:
+     level:
+       com.my.springcloud.dept: debug
+  #暴露全部的监控信息
+   management:
+     endpoints:
+       web:
+         exposure:
+           include: "*"
+     endpoint:
+       health:
+         show-details: ALWAYS
+eureka:
+  instance:
+    hostname: my.config.con
+  client:
+    register-with-eureka: false  #注册自己
+    fetch-registry: false    #自检（维护自己）
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:71001/eureka/
+---
+server:
+  port: 8002
+spring:
+  profiles: dev
+  application:
+    name: springcloud-coinfig-dept
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.1.66:3366/spring_cloud?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+  mybatis:
+    mapper-locations: classpath:mapper/*.xml
+  logging:
+    level:
+      com.my.springcloud.dept: debug
+  #暴露全部的监控信息
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+    endpoint:
+      health:
+        show-details: ALWAYS
+eureka:
+  instance:
+    hostname: my.config.con
+  client:
+    register-with-eureka: false  #注册自己
+    fetch-registry: false    #自检（维护自己）
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:71002/eureka/
+
+        
+
+
