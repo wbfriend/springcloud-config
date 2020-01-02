@@ -27,7 +27,7 @@ eureka:
     register-with-eureka: false  #注册自己
     fetch-registry: false    #自检（维护自己）
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:7101/eureka/
+      defaultZone: http://my.config.con:7101/eureka/
 ---
 server:
   port: 8002
@@ -47,13 +47,11 @@ spring:
       com.my.springcloud.dept: debug
 
 eureka:
-  instance:
-    hostname: my.config.con
   client:
     register-with-eureka: false  #注册自己
     fetch-registry: false    #自检（维护自己）
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:7102/eureka/
+      defaultZone: http://my.config.con:7102/eureka/
 
         
 
