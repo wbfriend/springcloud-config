@@ -19,15 +19,7 @@ spring:
    logging:
      level:
        com.my.springcloud.dept: debug
-  #暴露全部的监控信息
-   management:
-     endpoints:
-       web:
-         exposure:
-           include: "*"
-     endpoint:
-       health:
-         show-details: ALWAYS
+
 eureka:
   instance:
     hostname: my.config.con
@@ -35,7 +27,7 @@ eureka:
     register-with-eureka: false  #注册自己
     fetch-registry: false    #自检（维护自己）
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:71001/eureka/
+      defaultZone: http://${eureka.instance.hostname}:7101/eureka/
 ---
 server:
   port: 8002
@@ -53,15 +45,7 @@ spring:
   logging:
     level:
       com.my.springcloud.dept: debug
-  #暴露全部的监控信息
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: "*"
-    endpoint:
-      health:
-        show-details: ALWAYS
+
 eureka:
   instance:
     hostname: my.config.con
@@ -69,7 +53,7 @@ eureka:
     register-with-eureka: false  #注册自己
     fetch-registry: false    #自检（维护自己）
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:71002/eureka/
+      defaultZone: http://${eureka.instance.hostname}:7102/eureka/
 
         
 
