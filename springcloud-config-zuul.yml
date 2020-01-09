@@ -21,7 +21,7 @@ zuul:
   routes:
      springcloud-dept:
          path: /api/**
-         serviceId: springcloud-coinfig-zuul
+         serviceId: springcloud-coinfig-dept-feign
 ---
 server:
   port: 8202
@@ -41,9 +41,9 @@ zuul:
   routes:
     springcloud-dept:
       path: /api/**
-      serviceId: springcloud-coinfig-zuul
-  prefix: /api   #前缀
-  ignored-services: "*"  #禁用所有的真实服务名称
+      serviceId: springcloud-coinfig-dept-feign
+#  prefix: /api   #前缀
+#  ignored-services: "*"  #禁用所有的真实服务名称
 
 
         
