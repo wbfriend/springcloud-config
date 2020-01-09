@@ -1,0 +1,51 @@
+﻿spring:
+   profiles:
+      active:
+      - dev
+---
+server:
+   port: 8101
+spring:
+   profiles: dev
+   application:
+       name: springcloud-coinfig-zuul
+
+eureka:
+  instance:
+    instance-id: www.springcloud.zuul
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://my.config.con:7101/eureka/
+zuul:
+  routes:
+     springcloud-dept:
+         path: /api/**
+         serviceId: springcloud-coinfig-zuul
+---
+server:
+  port: 8102
+spring:
+  profiles: test
+  application:
+    name: springcloud-coinfig-zuul
+
+eureka:
+  instance:
+     instance-id: www.springcloud.zuul
+     prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://my.config.con:7102/eureka/
+zuul:
+  routes:
+    springcloud-dept:
+      path: /api/**
+      serviceId: springcloud-coinfig-zuul
+  prefix: /api   #前缀
+  ignored-services: "*"  #禁用所有的真实服务名称
+
+
+        
+
+

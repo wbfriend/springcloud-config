@@ -12,7 +12,8 @@ spring:
 
 eureka:
   instance:
-    hostname: my.config.con
+      instance-id: www.springcloud.feign   #在注册中心显示的地址名称
+      prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://my.config.con:7101/eureka/
@@ -28,6 +29,9 @@ spring:
     name: springcloud-coinfig-dept-feign
 
 eureka:
+  instance:
+    instance-id: www.springcloud.feign
+    prefer-ip-address: true
   client:
     register-with-eureka: false  #注册自己
     fetch-registry: false    #自检（维护自己）
