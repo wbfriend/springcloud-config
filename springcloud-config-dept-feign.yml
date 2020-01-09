@@ -1,0 +1,45 @@
+﻿spring:
+   profiles:
+      active:
+      - dev
+---
+server:
+   port: 8101
+spring:
+   profiles: dev
+   application:
+       name: springcloud-coinfig-dept-feign
+
+eureka:
+  instance:
+    hostname: my.config.con
+  client:
+    register-with-eureka: false  #注册自己
+    fetch-registry: false    #自检（维护自己）
+    service-url:
+      defaultZone: http://my.config.con:7101/eureka/
+feign:
+  hystrix:
+    enabled: true
+---
+server:
+  port: 8102
+spring:
+  profiles: test
+  application:
+    name: springcloud-coinfig-dept-feign
+
+eureka:
+  client:
+    register-with-eureka: false  #注册自己
+    fetch-registry: false    #自检（维护自己）
+    service-url:
+      defaultZone: http://my.config.con:7102/eureka/
+
+feign:
+  hystrix:
+    enabled: true
+
+        
+
+
