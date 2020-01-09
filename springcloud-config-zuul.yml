@@ -4,7 +4,7 @@
       - dev
 ---
 server:
-   port: 8101
+   port: 8201
 spring:
    profiles: dev
    application:
@@ -24,7 +24,7 @@ zuul:
          serviceId: springcloud-coinfig-zuul
 ---
 server:
-  port: 8102
+  port: 8202
 spring:
   profiles: test
   application:
