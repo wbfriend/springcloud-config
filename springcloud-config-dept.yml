@@ -22,7 +22,7 @@ logging:
 
 eureka:
   instance:
-    instance-id: www.springcloud.dept
+    instance-id: myspringcloud.dept
     prefer-ip-address: true
   client:
     service-url:
@@ -47,7 +47,7 @@ logging:
 
 eureka:
   stance:
-    instance-id: www.springcloud.dept
+    instance-id: myspringcloud.dept
     prefer-ip-address: true
   client:
     register-with-eureka: false  #注册自己

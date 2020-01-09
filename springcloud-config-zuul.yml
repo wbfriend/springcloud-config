@@ -12,7 +12,7 @@ spring:
 
 eureka:
   instance:
-    instance-id: www.springcloud.zuul
+    instance-id: myspringcloud.zuul
     prefer-ip-address: true
   client:
     service-url:
@@ -32,7 +32,7 @@ spring:
 
 eureka:
   instance:
-     instance-id: www.springcloud.zuul
+     instance-id: myspringcloud.zuul
      prefer-ip-address: true
   client:
     service-url:
