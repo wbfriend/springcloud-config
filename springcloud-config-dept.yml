@@ -40,9 +40,9 @@ spring:
     url: jdbc:mysql://192.168.1.66:3366/spring_cloud?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: 123456
-  mybatis:
+mybatis:
     mapper-locations: classpath:mapper/*.xml
-  logging:
+logging:
     level:
       com.my.springcloud.dept: debug
 
