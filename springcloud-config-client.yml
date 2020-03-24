@@ -12,7 +12,7 @@ spring:
 eureka:
    client:
      server-url:
-        defaultZone: http://http://my.config.con:5001
+        defaultZone: http://my.config.con:5001
 ---
 server:
    port: 7101
